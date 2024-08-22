@@ -76,22 +76,22 @@ export const ColumnSettings: FC<ColumnSettingsProps> = ({id, name, color, visibl
           <button
             onClick={() => {
               onClose?.();
-              handleAddColumn(index + 1);
+              dispatch(Actions.deleteColumn(id));
             }}
           >
-            <ArrowRight />
-            {t("Column.addColumnRight")}
+            <Trash />
+            {t("Column.deleteColumn")}
           </button>
         </li>
         <li>
           <button
             onClick={() => {
               onClose?.();
-              dispatch(Actions.deleteColumn(id));
+              handleAddColumn(index + 1);
             }}
           >
-            <Trash />
-            {t("Column.deleteColumn")}
+            <ArrowRight />
+            {t("Column.addColumnRight")}
           </button>
         </li>
         <li>
